@@ -51,7 +51,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 <html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <title>Parameterized Queries Instituted</title>
+    <title>PROTECTED</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
@@ -78,6 +78,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                 <label for="password">Password</label>
             </div>
             <button type="submit" class="btn btn-primary">Log in</button>
+            <button type="button" class="btn btn-secondary"><a href="MainUnprotected.php">Unprotected Example</a></button>
+
         </form>
     </main>
 </div>

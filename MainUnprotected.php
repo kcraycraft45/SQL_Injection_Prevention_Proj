@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     }
     if(empty($errors)) {
         // Input text directly into the SQL statement from input fields without sanitization.
-        $sql = "SELECT * FROM LOGINS WHERE (USERNAME = '$username') AND (PASSWORD = '$password') LIMIT 1;";
+        $sql = "SELECT * FROM LOGINS WHERE (USERNAME = '$username') AND (PASSWORD = '$password') LIMIT 1";
 
         error_log($sql);
 
@@ -50,6 +50,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                 $loginSuccess = true;
             }
         }
+        if ($loginSuccess) {
+            echo "<script>alert('Logged in Successfully');</script>";
+        } else {
+            echo "<script>alert('Invalid Credentials');</script>";
+        }
+
     }
 }
 ?>
@@ -57,7 +63,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 <html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <title>Parameterized Queries Failed</title>
+    <title>UNPROTECTED</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
@@ -74,6 +80,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                 <label for="password">Password</label>
             </div>
             <button type="submit" class="btn btn-primary">Log in</button>
+            <button type="button" class="btn btn-secondary"><a href="MainProtected.php">Protected Example</a></button>
         </form>
     </main>
 </div>
